@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static%}
+{%block title%}Login{%endblock%}
+
+{%block content%}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<header class="main-header">
+            <div class="header-left">
+                <img src="{% static 'images/New Risk Logo.png' %}" alt="Logo" class="header-logo">
+                <h1 class="header-title">Claim Risk Assessment Tool</h1>
+            </div>
+        </header>
+<form method ="post" action= "{%url "login"%}">
+    {%csrf_token%}
+    {{form.as_p}}
+   <button type="submit">Login</button> 
+<form>  
+    
+<a href="{% url 'password_reset' %}">Forgot Password?</a>
+
+<p>Don't have an account?
+    <a href="{% url 'register' %}">Register here</a>
+</p>
+
+{%endblock%} 

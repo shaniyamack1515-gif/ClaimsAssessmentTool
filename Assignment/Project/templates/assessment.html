@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/assessment.css' %}">
+
+<div class="page-container">
+    <header class="main-header">
+            <div class="header-left">
+                <img src="{% static 'images/New Risk Logo.png' %}" alt="Logo" class="header-logo">
+                <h1 class="header-title">Claim Assessment</h1>
+            </div>
+        </header>
+    <div class="menu-bar">
+
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'assessment' %}">Assessment</a>
+        <a href="{% url 'user_guide' %}">User Guide</a>
+        <a href="{% url 'password_reset' %}">Change Password</a>
+    </div>
+
+
+    <div class="assessment-grid">
+
+
+        <div class="left-section">
+
+            <label>Enter Account Number</label>
+            <input type="number" id="account_number">
+
+            <label>Select Motor Coverage Package</label>
+            <select id="client_package">
+             <option value="">Select Motor Coverage</option>
+            <option value="Third Party">Third Party</option>
+            <option value="Comprehensive">Comprehensive</option>
+            </select>
+
+            <label>Enter the Number of Years Premium Was Paid By Client</label>
+            <input type="number" id="years_paid" oninput="generatePremiumFields()">
+
+            <div id="premium_fields_container"></div>
+
+            <label>Enter the Number of Claims</label>
+            <input type="number" id="claims_count" oninput="generateClaimFields()">
+
+            <div id="claim_fields_container"></div>
+            <button class="pdf-btn" id="Calculate_Button">Calculate</button>
+        </div>
+
+        
+        <div class="right-section">
+            
+                <div class="info-box">
+                <h3>Loss Ratio</h3>
+                <input type="text" id="loss_ratio" readonly>
+            </div>
+            <div class="info-box">
+                <h3>Risk Category</h3>
+                <input type="text" id="risk_category" readonly>
+            </div>
+
+            <div class="info-box">
+                <h3>Rating Suggestion</h3>
+                <input type="text" id="rating_suggestion" readonly>
+            </div>
+            <button class="pdf-btn" id="DownloadPDF_Button">Download PDF</button>
+
+        </div>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="{% static 'js/assessment.js' %}"></script>
+{% endblock %}
+

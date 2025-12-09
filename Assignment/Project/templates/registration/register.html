@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static%}
+{%block title%}Register{%endblock%}
+
+{%block content%}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<header class="main-header">
+            <div class="header-left">
+                <img src="{% static 'images/New Risk Logo.png' %}" alt="Logo" class="header-logo">
+                <h1 class="header-title">Create an Account</h1>
+            </div>
+        </header>
+<form method ="post" action= "{%url "register"%}">
+    {%csrf_token%}
+    {{form.as_p}}
+   <button type="submit">Register</button> 
+   <a href ="{% url 'login' %}">Already have an account? Login here</a> 
+<form>
+{%endblock%} 

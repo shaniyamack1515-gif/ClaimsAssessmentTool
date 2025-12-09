@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/user_guide.css' %}">
+
+<div class="page-container">
+
+   <header class="main-header">
+            <div class="header-left">
+                <img src="{% static 'images/New Risk Logo.png' %}" alt="Logo" class="header-logo">
+                <h1 class="header-title">User Guide</h1>
+            </div>
+
+    <div class="menu-bar">
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'assessment' %}">Assessment</a>
+        <a href="{% url 'user_guide' %}">User Guide</a>
+        <a href="{% url 'password_reset' %}">Change Password</a>
+    </div>
+
+    <div class="guide-box">
+
+    <h2 class="Claim">What is a Claim?</h2>
+
+        <textarea class="large-textbox" readonly>
+    An insurance claim is when a policyholder asks their insurance company for coverage or payment for a covered loss or event. The insurer reviews the claim and either approves or denies it. If approved, payment is made to the insured or an authorized party.
+        </textarea>
+
+    <h2 class="Premium">What is a Premium?</h2>
+
+        <textarea class="large-textbox" readonly>
+    A premium is the amount paid to an insurance company for coverage. The company either pays claims from this pool or invests the funds to earn more.
+        </textarea>
+
+    <h2 class="Loss-Ratio">What is a Loss Ratio?</h2>
+
+        <textarea class="large-textbox" readonly>
+    The loss ratio is a number that shows how much an insurance company pays in claims compared to the money it earns from customers’ premiums. It includes the cost of claims paid and the expenses to handle those claims. 
+        </textarea>
+
+    <h2 class="Loss=RatioCalculate">How to Calculate Loss Ratio?</h2>
+
+        <textarea class="large-textbox" readonly>
+    To calculate loss ratio, you add the claims paid and the costs to handle them, then divide that by the total premiums the company earned. For example, if an insurer collects $100,000 in premiums and pays out $60,000 in claims, the loss ratio is 60%.
+        </textarea>
+
+     <h2 class="Rating-Suggestion">What is a Rating Suggestion?</h2>
+
+        <textarea class="large-textbox" readonly>
+    A rating suggestion refers to a recommended surcharge applied to a client’s account after a claim has been made. This surcharge reflects the increased risk or cost associated with that client due to the claim. It helps the insurance company adjust premiums to better match the risk profile and cover potential future losses. 
+        </textarea>
+
+    <h2 class="Rating-Suggestion">Why are these surcharges used?</h2>
+        <textarea class="large-textbox" readonly>
+    The surcharges are used to allow cost recovery and protect safer drivers. Surcharges encourage responsible behavior and ensure profitability with accurate risk-based pricing. It helps to maintain equity in the pool as higher rates usually last 3-5 years.
+        </textarea>
+
+     <h2 class="Risk-Category">What is a Risk Category?</h2>
+
+        <textarea class="large-textbox" readonly>
+    A risk category groups people or businesses with similar chances of causing losses. In the insurance industry, applicants are sorted this way to judge their risk level, decide if they qualify for coverage, and set premiums that match the danger fairly.
+        </textarea>
+
+    <h2 class="DNIR">What is a DNIR?</h2>
+
+        <textarea class="large-textbox" readonly>
+    A DNIR also known as a Do Not Invite Renewal is when an internal insurer decides a policy is not eligible for automatic renewal at expiration. It means that the company chooses not to offer continued coverage to the policyholder often due to high risk and frequent claims. 
+        </textarea>
+
+        <a href="{% static 'docs/CLAIMS RISK ASSESSMENT TOOL USER MANUAL.pdf' %}" download>Download Claims Risk Assessment Tool User Manual</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static%} 
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+<div class="dashboard-container">
+{%if user.is_authenticated%}
+<h2>Welcome, {{user.username}}.</h2>
+
+<!-- Page Title -->
+
+ <header class="main-header">
+            <div class="header-left">
+                <img src="{% static 'images/New Risk Logo.png' %}" alt="Logo" class="header-logo">
+                <h1 class="dashboard-title">Claim Risk Assessment Dashboard</h1>
+            </div>
+
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+       
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+        
+
+        <div class="dashboard-grid">
+
+            <a href="{% url 'assessment' %}" class="dash-card"><h3>Begin the claims risk evaluation.</h3>
+            </a>
+            <a href="{% url 'user_guide' %}" class="dash-card"><h3>User Guide</h3>
+            </a>
+            {% if user.is_staff %}
+            <a href="{% url 'admin:index' %}" class="dash-card"><h3>Go To Admin Dashboard</h3>
+            </a>
+            {% endif %}
+             <form method="POST" action="{% url 'logout' %}" class="logout-form">
+            {% csrf_token %}
+            <button type="submit" class=""dash-card logout-card">Logout</button>
+        </form>
+
+    </div>
+
+        </div>
+    </div>
+
+</div>
+{% else %}
+<p>
+  Welcome to our Claim Risk Assessment Tool. Please 
+  <a href="{% url 'login' %}">Login</a> or 
+  <a href="{% url 'register' %}">Register</a>.
+</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,133 @@
+html{
+    height: 100%;
+    font-family: sans-serif;
+}
+
+body{
+    background:#6c7ae0; 
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: auto;
+    overflow-y: auto;
+}
+form{
+    background-color: white;
+    justify-content: center;   
+    align-items: center;   
+    border-radius: 5%;
+    padding: 2rem;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    width: 300px;
+}
+ form input,
+ form select,
+ form textarea{
+
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border:none;
+    padding: 1em;
+ }
+
+ form button{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #072A6C;
+    border: none;
+    color: rgb(246, 246, 249);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+ }
+ form button:hover{
+    background-color: #0D4FB8;
+ }
+form .errorlist li{
+    list-style-type: none;
+    color: rgb(172, 29, 29);
+}
+
+@media screen and (max-width: 600px){
+    form{
+        width: 90%;
+    }
+}
+
+.index-card {
+    width: 300px;
+    background-color: white;
+    border-radius: 5%;
+    padding: 2rem;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #072A6C;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in;
+}
+
+.login-button:hover {
+    background-color: #0D4FB8;
+}
+
+.logout-button {
+    display: inline-block;       
+    padding: 8px 15px;           
+    font-size: 14px;            
+    background-color: #072A6C;   
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+    background-color: #0D4FB8;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-logo {
+    width: 60px;
+    height: auto;
+}
+
+.header-title {
+    font-size: 1.8rem;
+    color: #1e2a38;
+}
+
